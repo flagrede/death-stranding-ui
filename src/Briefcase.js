@@ -31,14 +31,14 @@ export default function Briefcase({
   const defaultRotationZ = 0
 
   const [{ position: animatedPosition }, set] = useSpring(() => ({
-    from: { position: [position[0], position[1] + 2, position[2]] },
+    from: { position: [position[0], position[1] + 5, position[2]] },
     to: { position },
   }))
 
   useEffect(() => {
     if (positionRef.current.toString() !== position.toString()) {
       set(() => ({
-        from: { position: [position[0], position[1] + 2, position[2]] },
+        from: { position: [position[0], position[1] + 5, position[2]] },
         to: { position },
       }))
     }
