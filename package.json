@@ -25,6 +25,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "react-spring-issue-1078": "find node_modules -path \\*@react-spring/\\*/package.json -exec sed -i.bak 's/\"sideEffects\": false/\"sideEffects\": true/g' {} +",
+    "postinstall": "npm run react-spring-issue-1078",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
