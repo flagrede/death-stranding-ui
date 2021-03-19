@@ -4,7 +4,7 @@
 
 ## Demo link
 
-https://www.deathstranding.gameuionweb.com/
+https://deathstranding.gameuionweb.com/
 
 ## Article link:
 
