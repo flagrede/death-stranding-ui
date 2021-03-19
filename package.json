@@ -1,0 +1,39 @@
+{
+  "name": "death-stranding-playground",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@react-spring/three": "9.0.0-rc.3",
+    "@react-spring/web": "9.0.0-rc.3",
+    "@react-three/a11y": "0.5.0",
+    "@react-three/drei": "3.8.6",
+    "autoprefixer": "10.2.4",
+    "classnames": "2.2.6",
+    "component-material": "1.0.6",
+    "postprocessing": "6.20.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-postprocessing": "1.4.0",
+    "react-scripts": "4.0.1",
+    "react-three-fiber": "5.3.18",
+    "three": "0.123.0",
+    "twind": "0.15.6",
+    "use-sound": "2.0.1",
+    "valtio": "0.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
