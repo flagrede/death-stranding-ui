@@ -4,7 +4,7 @@
 
 ## Demo link
 
-https://www.gameuionweb.com/zelda-botw
+https://www.deathstranding.gameuionweb.com/
 
 ## Article link:
 
