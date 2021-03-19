@@ -1,6 +1,6 @@
 # Death Stranding GameUI demo
 
-![demo](https://user-images.githubusercontent.com/530644/111817848-ce49ea80-88de-11eb-8316-38d486a69a58.jpeg)
+![demo](https://user-images.githubusercontent.com/530644/111818381-6647d400-88df-11eb-8a1c-afa2d4b5c58d.jpeg)
 
 ## Demo link
 
@@ -13,7 +13,6 @@ TBD
 ## Stack
 
 - React
-- Tailwind
 - react-three-fiber
 - react-postprocessing
 - react-three-a11y
