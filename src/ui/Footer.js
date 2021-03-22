@@ -2,7 +2,6 @@ import cx from 'classnames'
 import { useSnapshot } from 'valtio'
 import state from '../state'
 import AnimatedOuterBox from './AnimatedOuterBox'
-import Credits from './Credit'
 
 const Footer = () => {
   const { totalWeight } = useSnapshot(state)
@@ -23,7 +22,6 @@ const Footer = () => {
         </div>
         <div className="flex items-center justify-center h-8 w-32 mr-4 bg-blue-300" />
       </div>
-      <Credits />
     </div>
   )
 }
