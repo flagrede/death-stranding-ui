@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex items-center justify-center h-8 w-32 mr-4 bg-yellow-500">1000/1000ml</div>
         <div className={cx({ 'text-yellow-600': totalWeight > 15, 'text-red-500': totalWeight > 25 }, 'mr-4 text-lg')}>{totalWeight}kg</div>
       </div>
-      <div className="flex items-center">
+      <div className="hidden md:flex items-center">
         <div className="flex w-32 mr-4 bg-blue-900 bg-opacity-50">
           <div className="w-full h-8 mr-1 bg-blue-600" />
           <div className="w-full h-8 mr-1 bg-blue-600" />

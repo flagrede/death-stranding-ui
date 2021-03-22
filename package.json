@@ -13,6 +13,7 @@
     "classnames": "2.2.6",
     "component-material": "1.0.6",
     "postprocessing": "6.20.3",
+    "r3f-perf": "^0.83.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-postprocessing": "1.4.0",

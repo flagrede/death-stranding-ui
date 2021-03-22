@@ -7,7 +7,7 @@ import MenuItems from './MenuItems'
 import MenuTab from './MenuTab'
 
 const Inventory = () => {
-  const { selectedItem, allItems, allItemsSorted, itemsPrivateLocker, itemsShareLocker, itemsSam } = useSnapshot(state)
+  const { selectedItem, allItems, allItemsSorted, itemsPrivateLocker, itemsShareLocker, itemsSam, playMenuValidate } = useSnapshot(state)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedInventoryItem, setSelectedInventoryItem] = useState(selectedItem)
   const tableRef = useRef()
@@ -41,6 +41,7 @@ const Inventory = () => {
 
   const closeCallback = () => {
     setIsModalOpen(false)
+    playMenuValidate()
     tableRef.current.focus()
   }
 

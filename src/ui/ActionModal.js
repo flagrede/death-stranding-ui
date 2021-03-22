@@ -22,7 +22,7 @@ const actions = [
 ]
 
 const ActionModal = ({ closeCallback, setSelectedInventoryItem }) => {
-  const { selectedItem, itemsPrivateLocker, itemsShareLocker, selectedCategory, playMenu } = useSnapshot(state)
+  const { selectedItem, itemsPrivateLocker, itemsShareLocker, selectedCategory, playMenuChange, playMenuAction } = useSnapshot(state)
   const [actionSelected, setActionSelected] = useState(0)
   const modalRef = useRef()
   useClickOutside(modalRef, closeCallback)
@@ -34,25 +34,19 @@ const ActionModal = ({ closeCallback, setSelectedInventoryItem }) => {
   }, [])
 
   const privateLockerAction = () => {
-    const itemCopy = state.allItems[selectedItem]
-    state.allItems.splice(selectedItem, 1)
-    state.allItems.push({ ...itemCopy, category: 'private' })
+    state.allItems[selectedItem].category = 'private'
     setSelectedInventoryItem(0)
     closeCallback()
   }
 
   const shareLockerAction = () => {
-    const itemCopy = state.allItems[selectedItem]
-    state.allItems.splice(selectedItem, 1)
-    state.allItems.push({ ...itemCopy, category: 'share' })
+    state.allItems[selectedItem].category = 'share'
     setSelectedInventoryItem(itemsPrivateLocker.length - 1)
     closeCallback()
   }
 
   const samCargoAction = () => {
-    const itemCopy = state.allItems[selectedItem]
-    state.allItems.splice(selectedItem, 1)
-    state.allItems.push({ ...itemCopy, category: 'sam' })
+    state.allItems[selectedItem].category = 'sam'
     setSelectedInventoryItem(itemsPrivateLocker.length + itemsShareLocker.length - 1)
     closeCallback()
   }
@@ -63,20 +57,23 @@ const ActionModal = ({ closeCallback, setSelectedInventoryItem }) => {
     sam: samCargoAction,
   }
 
+  useEffect(() => playMenuAction(), [])
+
   const handleKeyPressed = (event) => {
     event.preventDefault()
     event.stopPropagation()
     let newAction
     if (event.key === 'ArrowUp') {
       newAction = actionSelected <= 0 ? filteredActions.length - 1 : actionSelected - 1
+      playMenuChange()
     } else if (event.key === 'ArrowDown') {
       newAction = (actionSelected + 1) % filteredActions.length
+      playMenuChange()
     } else if (event.key === 'Enter') {
       actionMapping[filteredActions[actionSelected].category]()
     } else if (event.key === 'Escape') {
       closeCallback()
     }
-    playMenu()
     setActionSelected(newAction)
   }
 
@@ -95,7 +92,7 @@ const ActionModal = ({ closeCallback, setSelectedInventoryItem }) => {
         <ul>
           {filteredActions.map((action, index) => (
             <li key={action.category} className="relative">
-              <button onClick={actionMapping[action.category]}>
+              <button className="focus:outline-none" onClick={actionMapping[action.category]}>
                 <div className="absolute w-full">{actionSelected === index && <MenuEffect className="w-full" />}</div>
                 <div className={'relative z-10'}>{action.label}</div>
               </button>
