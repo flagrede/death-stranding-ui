@@ -19,3 +19,7 @@ TBD
 - react-spring
 - twind
 - drei
+
+## Credits
+
+- [Briefcase model](https://sketchfab.com/3d-models/death-stranding-briefcase-a302797e258742f394256c0fbb8396ef)
