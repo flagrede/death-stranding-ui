@@ -54,7 +54,7 @@ const Inventory = () => {
 
   return (
     <>
-      <div ref={tableRef} className="w-full md:w-2/3 outline-none" onKeyDown={handleKeyPressed} tabIndex={0}>
+      <div ref={tableRef} className="w-full md:w-2/3 focus:outline-none" onKeyDown={handleKeyPressed} tabIndex={0}>
         <MenuTab className="w-full md:w-1/2">
           <div className="w-full md:w-4/6">Name</div>
           <div className="w-full md:w-1/6">Likes</div>

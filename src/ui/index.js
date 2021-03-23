@@ -7,7 +7,7 @@ import ItemDescription from './ItemDescription'
 const HtmlOverlay = () => (
   <div className={tw`absolute bg-black bg-opacity-10 inset-0 pt-20 text-menu-text z-10`}>
     <Header />
-    <div className="flex flex-col md:flex-row h-4/6 overflow-y-scroll no-scrollbar">
+    <div className="flex flex-col md:flex-row h-4/6 overflow-y-scroll no-scrollbar focus:outline-none">
       <Inventory />
       <ItemDescription />
     </div>
