@@ -19,7 +19,7 @@ export default function App() {
       <HtmlOverlay />
       <Canvas>
         <ambientLight intensity={2} />
-        <color attach="background" args={['#10161D']} />
+        <color attach="background" args={['#2A3C47']} />
         <GridsContainer briefcases={itemsPrivateLocker} />
         <ExternalGrid items={itemsShareLocker} position={[-10, -1, 10]} baseIndex={itemsPrivateLocker.length} />
         <ExternalGrid items={itemsSam} position={[6, -1, 10]} baseIndex={itemsPrivateLocker.length + itemsShareLocker.length} />
@@ -27,7 +27,7 @@ export default function App() {
         {isShareLocker && <ZoomShareLocker />}
         {isSamCargo && <ZoomSamCargo />}
         <Floor />
-        <fog attach="fog" args={['#10161D', 10, 20]} />
+        <fog attach="fog" args={['#2A3C47', 10, 20]} />
         <SoundManager />
       </Canvas>
     </>

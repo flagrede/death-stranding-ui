@@ -6,12 +6,11 @@ source: https://sketchfab.com/3d-models/death-stranding-briefcase-a302797e258742
 title: Death Stranding Briefcase
 */
 
+import { a, useSpring } from '@react-spring/three'
+import { useGLTF } from '@react-three/drei'
 import React, { useEffect, useRef } from 'react'
 import { Vector3 } from 'three'
-import { useA11y } from '@react-three/a11y'
-import { useGLTF } from '@react-three/drei'
 import SelectedMaterial from './materials/selectedMaterial'
-import { a, useSpring } from '@react-spring/three'
 
 const defaultFunction = () => null
 
@@ -46,29 +45,11 @@ export default function Briefcase({
     positionRef.current = position
   }, [position, set])
 
-  const a11y = useA11y()
-
   const { nodes, materials } = useGLTF('/model/briefcase.glb')
   const valigiaMaterial = materials.Valigia
   const manigliaMaterial = materials.Maniglia
 
   const MainMaterial = isSelected ? () => <SelectedMaterial /> : () => <meshStandardMaterial {...valigiaMaterial} />
-
-  useEffect(() => {
-    if (ref.current !== null) {
-      if (a11y.hover) {
-        setHoverBriefcase(ref)
-      } else if (hoverBriefcase === ref) {
-        setHoverBriefcase(null)
-      }
-      if (a11y.focus) {
-        setFocusBriefcase(ref)
-      }
-      if (isSelected) {
-        setSelectedBriefcase(ref)
-      }
-    }
-  }, [a11y, isSelected])
 
   return (
     <a.group position={animatedPosition} scale={new Vector3(0.009, 0.009, 0.009)} {...props} dispose={null}>

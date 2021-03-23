@@ -114,10 +114,6 @@ const GridsContainer = ({ briefcases }) => {
 
       <Grid texture={smallCrossTexture} positions={positionsSmallCross} />
       <Grid texture={largeCrossTexture} positions={positionsBigCross} />
-
-      <EffectComposer>
-        <Outline selection={[]} visibleEdgeColor="#2D4F8F" edgeStrength={2} />
-      </EffectComposer>
     </group>
   )
 }

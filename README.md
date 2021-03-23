@@ -14,7 +14,6 @@ TBD
 
 - React
 - react-three-fiber
-- react-postprocessing
 - react-three-a11y
 - react-spring
 - twind

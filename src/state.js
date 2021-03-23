@@ -11,9 +11,6 @@ const state = proxyWithComputed(
     playMenuValidate: () => null,
     playMail: () => null,
     playRingtone: () => null,
-    hoverRef: null,
-    selectedRef: null,
-    focusRef: null,
   },
   {
     isPrivateLocker: ({ selectedItem, allItems }) => allItems[selectedItem].category === 'private',
