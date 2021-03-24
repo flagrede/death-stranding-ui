@@ -6,6 +6,11 @@ body,
   margin: 0;
   padding: 0;
   font-family: 'Sackers Gothic Light AT';
+  overflow: hidden;
+}
+
+body {
+  perspective: 800px;
 }
 
 /* Chrome, Safari and Opera */

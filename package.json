@@ -8,7 +8,7 @@
     "@react-spring/three": "9.0.0-rc.3",
     "@react-spring/web": "9.0.0-rc.3",
     "@react-three/a11y": "0.5.0",
-    "@react-three/drei": "3.8.6",
+    "@react-three/drei": "3.11.2",
     "autoprefixer": "10.2.4",
     "classnames": "2.2.6",
     "component-material": "1.0.6",
