@@ -2,6 +2,7 @@ import { memo } from 'react'
 import MenuCategory from './MenuCategory'
 import MenuEffect from './MenuEffect'
 import cx from 'classnames'
+import { tw } from 'twind'
 
 const MenuItems = ({ items, menuCategoryName, onClick, selectedItem, baseIndex = 0 }) => (
   <>
@@ -19,7 +20,7 @@ const MenuItems = ({ items, menuCategoryName, onClick, selectedItem, baseIndex =
         >
           <div className="w-full pt-1">
             <div className="absolute w-full">{index + baseIndex === selectedItem && <MenuEffect className="w-full md:w-1/2" />}</div>
-            <div className="w-full md:w-1/2 flex">
+            <div className={tw`w-full md:w-1/2 flex hover:bg-menu-item`}>
               <div className="flex items-center relative z-10 py-1 px-2 w-4/6">{item.name}</div>
               <div className="flex items-center relative z-10 py-1 px-2 w-1/6">{item.likes}</div>
               <div className="flex items-center relative z-10 py-1 px-2 w-1/6">{item.weight?.toFixed(1)}</div>

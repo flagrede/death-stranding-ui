@@ -8,7 +8,7 @@ const SelectedMaterial = (props) => {
         uniforms={{
           r: { value: 0.0, type: 'float' },
           g: { value: 0.0, type: 'float' },
-          b: { value: 0.4, type: 'float' },
+          b: { value: 0.2, type: 'float' },
         }}
         transparent
       >
