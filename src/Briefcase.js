@@ -49,16 +49,23 @@ export default function Briefcase({
   const valigiaMaterial = materials.Valigia
   const manigliaMaterial = materials.Maniglia
 
-  const MainMaterial = isSelected ? () => <SelectedMaterial /> : () => <meshStandardMaterial {...valigiaMaterial} />
+  const MainMaterial = isSelected
+    ? (props) => <SelectedMaterial {...props} />
+    : (props) => <meshStandardMaterial {...props} {...valigiaMaterial} />
 
   return (
     <a.group position={animatedPosition} scale={new Vector3(0.009, 0.009, 0.009)} {...props} dispose={null}>
       <group rotation={[defaultRotationX, defaultRotationY, defaultRotationZ]}>
         <group position={[0, 0, 0]}>
           <group rotation={[0, 0, 0]}>
-            <mesh ref={ref} geometry={nodes.defaultMaterial.geometry}>
-              <MainMaterial />
-            </mesh>
+            <group>
+              <mesh ref={ref} geometry={nodes.defaultMaterial.geometry}>
+                <MainMaterial blue={0.4} transparent opacity={1} />
+              </mesh>
+              <mesh ref={ref} geometry={nodes.defaultMaterial.geometry}>
+                <MainMaterial transparent opacity={1} wireframe />
+              </mesh>
+            </group>
             {!isSelected && (
               <>
                 <mesh material={manigliaMaterial} geometry={nodes.defaultMaterial_1.geometry} />

@@ -1,6 +1,6 @@
 import Material from 'component-material'
 
-const SelectedMaterial = (props) => {
+const SelectedMaterial = ({ blue = 0.2, ...props }) => {
   return (
     <>
       <Material
@@ -8,7 +8,7 @@ const SelectedMaterial = (props) => {
         uniforms={{
           r: { value: 0.0, type: 'float' },
           g: { value: 0.0, type: 'float' },
-          b: { value: 0.2, type: 'float' },
+          b: { value: blue, type: 'float' },
         }}
         transparent
       >
