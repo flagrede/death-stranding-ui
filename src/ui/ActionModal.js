@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { tw } from 'twind'
 import { useSnapshot } from 'valtio'
 import useClickOutside from '../hooks/useClickOutside'
 import state from '../state'
@@ -92,9 +93,9 @@ const ActionModal = ({ closeCallback, setSelectedInventoryItem }) => {
         <ul>
           {filteredActions.map((action, index) => (
             <li key={action.category} className="relative">
-              <button className="focus:outline-none" onClick={actionMapping[action.category]}>
+              <button className="flex focus:outline-none w-full text-left" onClick={actionMapping[action.category]}>
                 <div className="absolute w-full">{actionSelected === index && <MenuEffect className="w-full" />}</div>
-                <div className={'relative z-10'}>{action.label}</div>
+                <div className={tw`relative z-10 hover:bg-menu-effect w-full`}>{action.label}</div>
               </button>
             </li>
           ))}
