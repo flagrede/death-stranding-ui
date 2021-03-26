@@ -12,7 +12,7 @@ const SelectedMaterial = ({ blue = 0.2, ...props }) => {
         }}
         transparent
       >
-        <Material.Frag.Body children={`gl_FragColor = vec4(r, g, b, 0.4);`} />
+        <Material.Frag.Body children={`gl_FragColor = vec4(r, g, b, 0.2);`} />
       </Material>
     </>
   )

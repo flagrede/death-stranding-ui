@@ -14,21 +14,12 @@ import SelectedMaterial from './materials/selectedMaterial'
 
 const defaultFunction = () => null
 
-export default function Briefcase({
-  isSelected,
-  setSelectedBriefcase = defaultFunction,
-  setFocusBriefcase = defaultFunction,
-  setHoverBriefcase = defaultFunction,
-  hoverBriefcase,
-  position,
-  ...props
-}) {
+const Briefcase = ({ isSelected, position, ...props }) => {
   const ref = useRef()
   const positionRef = useRef(position)
   const defaultRotationX = Math.PI * 0.5
   const defaultRotationY = Math.PI
   const defaultRotationZ = 0
-
   const [{ position: animatedPosition }, set] = useSpring(() => ({
     from: { position: [position[0], position[1] + 5, position[2]] },
     to: { position },
@@ -84,5 +75,11 @@ export default function Briefcase({
     </a.group>
   )
 }
+
+export default React.memo(Briefcase, (prevProps, nextProps) => {
+  if (!prevProps) return false
+  const { isSelected, position } = prevProps
+  return isSelected === nextProps?.isSelected && position.toString() === nextProps.position.toString()
+})
 
 useGLTF.preload('/model/briefcase.glb')

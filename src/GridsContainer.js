@@ -26,9 +26,6 @@ const SUITCASE_Z_SPACING = 0.2
 
 const GridsContainer = ({ briefcases }) => {
   const { selectedId } = useSnapshot(state)
-  const [selectedBriefcase, setSelectedBriefcase] = useState()
-  const [focusBriefcase, setFocusBriefcase] = useState()
-  const [hoverBriefcase, setHoverBriefcase] = useState()
 
   const [positionsSmallCross, positionsBigCross, positionsBriefcases] = useMemo(() => {
     let positionsSmallCross = []
@@ -81,8 +78,6 @@ const GridsContainer = ({ briefcases }) => {
     return [new Float32Array(positionsSmallCross), new Float32Array(positionsBigCross), new Float32Array(positionsBriefcases)]
   }, [])
 
-  const outlineRefs = [selectedBriefcase, hoverBriefcase, focusBriefcase].filter(Boolean)
-
   return (
     <group position={[0, -1, 0]}>
       <Suspense fallback="loading...">
@@ -91,24 +86,7 @@ const GridsContainer = ({ briefcases }) => {
           const y = positionsBriefcases[index * 3 + 1]
           const z = positionsBriefcases[index * 3 + 2]
 
-          return (
-            <A11y
-              role="button"
-              key={item.id}
-              actionCall={() => {
-                state.selectedItem = index
-              }}
-            >
-              <Briefcase
-                position={[x, y, z]}
-                isSelected={item.id === selectedId}
-                hoverBriefcase={hoverBriefcase}
-                setSelectedBriefcase={setSelectedBriefcase}
-                setFocusBriefcase={setFocusBriefcase}
-                setHoverBriefcase={setHoverBriefcase}
-              />
-            </A11y>
-          )
+          return <Briefcase key={item.id} position={[x, y, z]} isSelected={item.id === selectedId} />
         })}
       </Suspense>
 
