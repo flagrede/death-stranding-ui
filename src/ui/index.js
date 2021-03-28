@@ -3,6 +3,7 @@ import Footer from './Footer'
 import Header from './Header'
 import Inventory from './Inventory'
 import ItemDescription from './ItemDescription'
+import Loader from './Loader'
 
 const HtmlOverlay = () => (
   <div
@@ -19,6 +20,7 @@ const HtmlOverlay = () => (
       <ItemDescription />
     </div>
     <Footer />
+    <Loader />
   </div>
 )
 
