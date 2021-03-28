@@ -3,8 +3,8 @@ import { useProgress } from '@react-three/drei'
 import { a, useTransition } from '@react-spring/web'
 
 const Loader = () => {
-  const { active, progress: progressThree } = useProgress()
-  const transition = useTransition(active, {
+  const { progress: progressThree } = useProgress()
+  const transition = useTransition(progressThree < 100, {
     from: { opacity: 1, progress: 0 },
     leave: { opacity: 0 },
     update: { progress: progressThree },
