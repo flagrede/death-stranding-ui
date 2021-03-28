@@ -20,7 +20,7 @@ const MenuItems = ({ items, menuCategoryName, onClick, selectedItem, baseIndex =
         >
           <div className="w-full pt-1">
             <div className="absolute w-full">{index + baseIndex === selectedItem && <MenuEffect className="w-full md:w-1/2" />}</div>
-            <div className={tw`w-full md:w-1/2 flex hover:bg-menu-item select-none`}>
+            <div className={tw`w-full md:w-1/2 h-6 mb-2 flex hover:bg-menu-item select-none`}>
               <div className="flex items-center relative z-10 py-1 px-2 w-4/6">{item.name}</div>
               <div className="flex items-center relative z-10 py-1 px-2 w-1/6">{item.likes}</div>
               <div className="flex items-center relative z-10 py-1 px-2 w-1/6">{item.weight?.toFixed(1)}</div>
