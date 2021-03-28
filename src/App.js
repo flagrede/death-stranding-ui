@@ -1,15 +1,16 @@
 import React from 'react'
+import { BrightnessContrast, EffectComposer, SSAO } from 'react-postprocessing'
 import { Canvas } from 'react-three-fiber'
 import { useSnapshot } from 'valtio'
 import ExternalGrid from './ExternalGrid'
 import Floor from './Floor'
 import GridsContainer from './GridsContainer'
+import SoundManager from './sounds/SoundsManager'
 import state from './state'
 import HtmlOverlay from './ui'
 import ZoomPrivateLocker from './zoomEffects/ZoomPrivateLocker'
-import ZoomShareLocker from './zoomEffects/ZoomShareLocker'
 import ZoomSamCargo from './zoomEffects/ZoomSamCargo'
-import SoundManager from './sounds/SoundsManager'
+import ZoomShareLocker from './zoomEffects/ZoomShareLocker'
 
 export default function App() {
   const { itemsPrivateLocker, itemsShareLocker, itemsSam, isPrivateLocker, isShareLocker, isSamCargo } = useSnapshot(state)
@@ -18,6 +19,7 @@ export default function App() {
     <>
       <HtmlOverlay />
       <Canvas>
+        <hemisphereLight intensity={2} />
         <ambientLight intensity={2} />
         <color attach="background" args={['#2A3C47']} />
         <GridsContainer briefcases={itemsPrivateLocker} />
