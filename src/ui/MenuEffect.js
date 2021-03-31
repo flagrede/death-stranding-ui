@@ -6,18 +6,17 @@ const MenuEffect = ({ className }) => {
   const opacityRef = useRef()
   const heightRef = useRef()
   const bgOpacityRef = useRef()
-  const [{ x, opacity }] = useSpring(() => ({
-    from: { x: 0, opacity: 1 },
-    to: { x: 2, opacity: 0 },
+  const [{ x, opacity, width }] = useSpring(() => ({
+    from: { x: 0, opacity: 0.5, width: '0%' },
+    to: { x: 2, opacity: 1, width: '100%' },
     ref: opacityRef,
-    config: { mass: 1, tension: 220, friction: 18 },
+    config: { mass: 1, tension: 210, friction: 26 },
   }))
 
   const [{ height }] = useSpring(() => ({
     from: { height: 0 },
     to: { height: 24 },
     ref: heightRef,
-    duration: 3000,
   }))
 
   const [{ bgOpacity, color }] = useSpring(() => ({
@@ -29,13 +28,13 @@ const MenuEffect = ({ className }) => {
     config: config.slow,
   }))
 
-  useChain([opacityRef, heightRef, bgOpacityRef], [0, 0.2, 0.2])
+  useChain([opacityRef, heightRef, bgOpacityRef], [0, 0.2, 0])
 
   return (
     <>
       <a.div className={tw`absolute z-0 h-6 bg-menu-item ${className}`} style={{ opacity: bgOpacity, height, backgroundColor: color }} />
       <a.div className="absolute h-6" style={{ opacity, width: '100%' }}>
-        <svg className={tw`text-menu-effect fill-current`} width="100%" height="100%" viewBox="0 0 16 3" preserveAspectRatio="none">
+        <a.svg className={tw`text-menu-effect fill-current`} width={width} height="100%" viewBox="0 0 16 3" preserveAspectRatio="none">
           <a.path
             d={
               x &&
@@ -49,7 +48,7 @@ const MenuEffect = ({ className }) => {
               })
             }
           />
-        </svg>
+        </a.svg>
       </a.div>
     </>
   )
