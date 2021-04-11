@@ -31,8 +31,8 @@ export default function App() {
         {isSamCargo && <ZoomSamCargo />}
         <Floor />
         <fog attach="fog" args={['#2A3C47', 10, 20]} />
-        <SoundManager />
       </Canvas>
+      <SoundManager />
     </>
   )
 }
