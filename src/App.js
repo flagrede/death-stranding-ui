@@ -21,6 +21,7 @@ export default function App() {
       <Canvas>
         <hemisphereLight intensity={2} />
         <ambientLight intensity={2} />
+        <pointLight position={[40, 40, 40]} intensity={2} />
         <color attach="background" args={['#2A3C47']} />
         <GridsContainer briefcases={itemsPrivateLocker} />
         <ExternalGrid items={itemsShareLocker} position={[-10, -1, 10]} baseIndex={itemsPrivateLocker.length} />
