@@ -1,4 +1,5 @@
 import { tw, css } from 'twind/css'
+import Credits from './Credits'
 import Footer from './Footer'
 import Header from './Header'
 import Inventory from './Inventory'
@@ -20,6 +21,7 @@ const HtmlOverlay = () => (
       <ItemDescription />
     </div>
     <Footer />
+    <Credits />
     <Loader />
   </div>
 )
