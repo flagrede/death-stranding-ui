@@ -6,7 +6,7 @@ import AnimatedOuterBox from './AnimatedOuterBox'
 const Footer = () => {
   const { totalWeight } = useSnapshot(state)
   return (
-    <div className="relative flex flex-col m-4 text-white">
+    <div className="relative hidden md:flex flex-col m-4 text-white">
       <AnimatedOuterBox />
       <div className="flex mb-4 text-xs items-center">
         <div className="flex items-center justify-center h-8 w-32 mr-4 bg-red-500">1000/1000ml</div>
