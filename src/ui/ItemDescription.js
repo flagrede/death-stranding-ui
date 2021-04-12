@@ -42,7 +42,7 @@ const ItemDescription = () => {
 
   return (
     <div className="w-full md:w-1/3 relative md:fixed right-0 mt-6 md:mt-0">
-      <div className="w-2/3 relative px-3">
+      <div className="w-full md:w-2/3 relative px-3">
         {isTriggered && <SideMenuEffect selectedItem={selectedItem} />}
         {isTriggered ? <AnimatedOuterBox /> : <OuterBox />}
         <div className={tw`flex items-center bg-menu-header text-xs h-6 px-2 edge-corner mb-2 -my-2`}>Details</div>
