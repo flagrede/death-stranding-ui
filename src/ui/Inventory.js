@@ -7,7 +7,16 @@ import MenuItems from './MenuItems'
 import MenuTab from './MenuTab'
 
 const Inventory = () => {
-  const { selectedItem, allItems, allItemsSorted, itemsPrivateLocker, itemsShareLocker, itemsSam, playMenuValidate } = useSnapshot(state)
+  const {
+    selectedItem,
+    allItems,
+    allItemsSorted,
+    itemsPrivateLocker,
+    itemsShareLocker,
+    itemsSam,
+    playMenuValidate,
+    playMenuChange,
+  } = useSnapshot(state)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedInventoryItem, setSelectedInventoryItem] = useState(selectedItem)
   const tableRef = useRef()
@@ -51,6 +60,8 @@ const Inventory = () => {
       state.selectedItem = allItems.findIndex((item) => item.id === selectedId)
     }
   }, [selectedInventoryItem, allItems, allItemsSorted])
+
+  useEffect(() => playMenuChange(), [selectedItem])
 
   return (
     <>

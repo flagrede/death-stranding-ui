@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
 import useSound from 'use-sound'
-import { useSnapshot } from 'valtio'
 import state from '../state'
 import likeSound from './files/like.mp3'
 import menuChangeSound from './files/menu1.mp3'
@@ -10,7 +8,6 @@ import ringtoneSound from './files/ringtone.wav'
 import mail from './files/mail.wav'
 
 const SoundManager = () => {
-  const { selectedItem } = useSnapshot(state)
   const [playLike] = useSound(likeSound, { volume: 0.8 })
   const [playMenuChange] = useSound(menuChangeSound)
   const [playMenuAction] = useSound(menuActionSound)
@@ -23,10 +20,6 @@ const SoundManager = () => {
   state.playMenuValidate = playMenuValidate
   state.playRingtone = playRingtone
   state.playMail = playMail
-
-  useEffect(() => {
-    playMenuChange()
-  }, [playMenuChange, selectedItem])
 
   return null
 }
