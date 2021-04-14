@@ -8,12 +8,12 @@ import ringtoneSound from './files/ringtone.wav'
 import mail from './files/mail.wav'
 
 const SoundManager = () => {
-  const [playLike] = useSound(likeSound, { volume: 0.5 })
+  const [playLike] = useSound(likeSound, { volume: 0.4 })
   const [playMenuChange] = useSound(menuChangeSound)
   const [playMenuAction] = useSound(menuActionSound)
   const [playMenuValidate] = useSound(menuValidateSound)
-  const [playRingtone] = useSound(ringtoneSound, { volume: 0.7 })
-  const [playMail] = useSound(mail, { volume: 0.7 })
+  const [playRingtone] = useSound(ringtoneSound, { volume: 0.4 })
+  const [playMail] = useSound(mail, { volume: 0.4 })
   state.likeSound = playLike
   state.playMenuChange = playMenuChange
   state.playMenuAction = playMenuAction
