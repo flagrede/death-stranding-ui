@@ -1,6 +1,7 @@
 import React from 'react'
 import { useProgress } from '@react-three/drei'
 import { a, useTransition } from '@react-spring/web'
+import state from '../state'
 
 const Loader = () => {
   const { progress: progressThree } = useProgress()
@@ -9,6 +10,9 @@ const Loader = () => {
     leave: { opacity: 0 },
     update: { progress: progressThree },
   })
+  if (progressThree >= 100) {
+    state.isThreeLoaded = true
+  }
 
   return transition(({ progress, opacity }, active) => {
     return (
