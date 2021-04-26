@@ -24,6 +24,10 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+.htmlContainer {
+  -webkit-transform: rotate3d(0, 1, 0, 357deg);
+}
+
 @font-face {
   font-family: 'Sackers Gothic Light AT';
   src: url('./assets/font/SackersGothicLightAT.woff2') format('woff2'), url('./assets/font/SackersGothicLightAT.woff') format('woff');

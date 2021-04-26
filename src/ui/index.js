@@ -11,7 +11,9 @@ const HtmlOverlay = () => (
     className={tw(
       css`
         @apply absolute inset-0 pt-20 md:px-14 text-menu-text z-10 bg-black bg-opacity-40 md:bg-transparent;
-        transform: rotate3d(0, 1, 0, 357deg);
+        @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+          -webkit-transform: rotate3d(0, 1, 0, 357deg);
+        }
       `
     )}
   >
